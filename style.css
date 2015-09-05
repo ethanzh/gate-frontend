@@ -1,5 +1,5 @@
 body {
-	background: #C0C0C0;
+	background: #66CCFF;
 }
 #mainheading {
 	font-family: monospace;
@@ -7,12 +7,14 @@ body {
 	text-align: center;
 }
 #loginwindow {
-	background-color: white;
+	background-color: #F4D7FF;
 	border-style: solid;
 	text-align: center;
 	width: 500px;
 	margin-left: auto;
 	margin-right: auto;
+	border-radius: 25px;
+	padding: 20px;
 }
 button {
 	width: 175px;
@@ -24,7 +26,7 @@ button {
 #bottom {
 	background-color: white;
 	float: bottom;
-	height: 125px;
+	height: 50px;
 	position:absolute;
   	bottom:0;
    	width:100%;
@@ -36,4 +38,10 @@ button {
 .bottomleft {
 	font-family: arial;
 	font-size: 12px;
+}
+#main {
+	background-color: ;
+}
+#password {
+	-webkit-text-security: disc;
 }
