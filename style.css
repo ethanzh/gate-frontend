@@ -24,17 +24,17 @@ body {
 	font-family: arial;
 }
 #footer {
-	background-color: white;
+	background-color: #A9D5F3;
 	float: bottom;
 	height: 50px;
 	position:absolute;
   	bottom:0;
    	width:100%;
-   	border-top: solid;
+   	border-style: solid;
 }
 .underlogin {
 	font-family: arial;
-	font-color: grey;
+	color: #404040;
 	font-size: 10px;
 }
 #creditsdiv {
@@ -57,5 +57,5 @@ body {
 	padding: 5px;
 	width: 350px;
 	height: 80px;
-	background-color: white;
+	background-color: #CCFFFF;
 }
