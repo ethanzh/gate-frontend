@@ -1,5 +1,5 @@
 body {
-	background: #66CCFF;
+	background: #66B2FF;
 }
 #mainheading {
 	font-family: monospace;
@@ -7,23 +7,23 @@ body {
 	text-align: center;
 }
 #loginwindow {
-	background-color: #F4D7FF;
-	border-style: solid;
+	background-color: #A9D5F3;
 	text-align: center;
 	width: 500px;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 25px;
+	border-radius: 20px;
 	padding: 20px;
+	border-style: solid;
 }
-button {
-	width: 175px;
-	height: 30px;
+#submitbutton {
+	width: 300px;
+	height: 50px;
 }
 .labels {
 	font-family: arial;
 }
-#bottom {
+#footer {
 	background-color: white;
 	float: bottom;
 	height: 50px;
@@ -32,16 +32,30 @@ button {
    	width:100%;
    	border-top: solid;
 }
-#bottomleft {
+.underlogin {
+	font-family: arial;
+	font-color: grey;
+	font-size: 10px;
+}
+#creditsdiv {
 	float: left;
 }
-.bottomleft {
-	font-family: arial;
-	font-size: 12px;
+#credits {
+	font-family: monospace;
 }
 #main {
-	background-color: ;
+	background-color: #66B2FF;
 }
 #password {
 	-webkit-text-security: disc;
+}
+.userspace {
+	border-style: solid;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 20px;
+	padding: 5px;
+	width: 350px;
+	height: 80px;
+	background-color: white;
 }

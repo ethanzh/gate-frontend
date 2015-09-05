@@ -7,5 +7,6 @@ var loginGrabber = function(){
 var passwordLength = function(password){
 	if(password.length < 8){
 		document.getElementById("tooshort").innerHTML = "Paragraph changed!";
+		document.write("hey")
 	}
 }

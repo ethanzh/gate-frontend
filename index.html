@@ -14,25 +14,32 @@
 		<br>
 		<br>
 		<div id="main">
-		<div id="loginwindow">
-			<h1 id="mainheading">Login Portal</h1>
-			<div id="formdiv">
-				<form id="forms">
-					<p id="tooshort"></p>
-					<p class="labels">Username:</p><input id="username" type="text" name="username">				  	
-					<p class="labels">Password:</p><input id="password" type="text" name="password">
-					<br>
-					<br><button onclick="loginGrabber()">Submit</button>
-					<br>
-					<br>
-				</form>
+			<div id="loginwindow">
+				<h1 id="mainheading">Login Portal</h1>
+				<div id="formdiv">
+					<form id="forms">
+						<p id="tooshort"></p>
+						<div class="userspace">
+							<p class="labels">Username:</p><input id="username" type="text" name="username"><br><br>
+						</div>
+						<br>
+						<div class="userspace">		  	
+							<p class="labels">Password:</p><input id="password" type="text" name="password"><br><br>
+						</div>
+						<br><button id="submitbutton" onclick="loginGrabber()">Submit</button>
+						<br>
+						<br>
+						<p class="underlogin">Terms and Conditions</p>
+						<p class="underlogin">More bullshit</p>
+						<p class="underlogin">Forgot password? Click <a href="google.com">here</a></p>
+					</form>
+				</div>
 			</div>
-		</div>
-		<div id="bottom">
-			<div id="bottomleft">
-				<p class="buttomleft">Developed by Ethan Houston and Kennith Lin</p>
+			<div id="footer">
+				<div id="creditsdiv">
+					<p id="credits">Developed by Ethan Houston and Kennith Lin</p>
+				</div>
 			</div>
-		</div>
 		</div>
 		<script src="engine.js"type="text/javascript"></script>
 	</body>
