@@ -18,10 +18,11 @@
 			<h1 id="mainheading">Login Portal</h1>
 			<div id="formdiv">
 				<form id="forms">
-					<p class="labels">Username:</p><input type="text" name="username">				  	
+					<p id="tooshort"></p>
+					<p class="labels">Username:</p><input id="username" type="text" name="username">				  	
 					<p class="labels">Password:</p><input id="password" type="text" name="password">
 					<br>
-					<br><button type="submit" value="Submit">Submit</button>
+					<br><button onclick="loginGrabber()">Submit</button>
 					<br>
 					<br>
 				</form>
