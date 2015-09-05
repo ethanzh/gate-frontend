@@ -1,0 +1,39 @@
+body {
+	background: #C0C0C0;
+}
+#mainheading {
+	font-family: monospace;
+	font-size: 42px;
+	text-align: center;
+}
+#loginwindow {
+	background-color: white;
+	border-style: solid;
+	text-align: center;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+button {
+	width: 175px;
+	height: 30px;
+}
+.labels {
+	font-family: arial;
+}
+#bottom {
+	background-color: white;
+	float: bottom;
+	height: 125px;
+	position:absolute;
+  	bottom:0;
+   	width:100%;
+   	border-top: solid;
+}
+#bottomleft {
+	float: left;
+}
+.bottomleft {
+	font-family: arial;
+	font-size: 12px;
+}
