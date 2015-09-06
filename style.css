@@ -48,6 +48,10 @@ body {
 }
 #password {
 	-webkit-text-security: disc;
+	height: 20px;
+}
+#username {
+	height: 20px;
 }
 .userspace {
 	border-style: solid;
@@ -57,5 +61,5 @@ body {
 	padding: 5px;
 	width: 350px;
 	height: 80px;
-	background-color: #CCFFFF;
+	background-color: white;
 }
