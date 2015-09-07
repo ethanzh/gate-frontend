@@ -74,9 +74,11 @@ body {
   padding: 15px 25px 15px 25px;
   border: solid #000000 2px;
   text-decoration: none;
+  cursor: pointer, hand
 }
 
 .btn:hover {
   background: #A9D5F3;
   text-decoration: none;
+  cursor: pointer, hand
 }
