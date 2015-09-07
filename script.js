@@ -6,13 +6,13 @@ var loginGrabber = function(){
 
 $(document).ready(function(){
 	$( "#usr" ).mouseover(function() {
-	  $("#usr").css("background-color", "white");
+	  $("#usr").css("background-color", "#A9D5F3");
 	});
 	$( "#usr" ).mouseleave(function() {
 	  $("#usr").css("background-color", "#66B2FF");
 	});
 	$( "#pas" ).mouseover(function() {
-	  $("#pas").css("background-color", "white");
+	  $("#pas").css("background-color", "#A9D5F3");
 	});
 	$( "#pas" ).mouseleave(function() {
 	  $("#pas").css("background-color", "#66B2FF");
