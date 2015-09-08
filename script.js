@@ -3,6 +3,8 @@ var main = function(){
 	var answers = loginGrabber();
 	stringFixer(answers[0], answers[1]);
 	emptyChecker(answers[0], answers[1]);
+	lengthChecker(answers[1]);
+	console.log(answers)
 }
 var loginGrabber = function(){
 	var username = document.getElementById("username").value
@@ -13,6 +15,14 @@ var stringFixer = function(username, password){
 	username = username.toLowerCase();
 	username = username.trim();
 	username = username.replace(/ /g, '')
+}
+var lengthChecker = function(password){
+	if (password.length > 18){
+		alert("Too long!");
+	}
+	else if (password.length < 6) {
+		alert("Too short!");
+	}
 }
 var emptyChecker = function(username, password){
 	if (username === "") {
