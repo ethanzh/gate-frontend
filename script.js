@@ -34,20 +34,28 @@ var stringFixer = function(username, password){
 }
 var lengthChecker = function(password){
 	if (password.length > 18){
+		changeLabelColor("passwordlabel", "red");
 		changeLabelValue("passwordlabel", "Too long!");
 	}
-	else if (password.length < 6) {
-		changeLabelValue("passwordlabel", "Too short!");
+	else if (password.length > 1 && password.length < 8) {
+		changeLabelColor("passwordlabel", "red");
+		changeLabelValue("passwordlabel", "Too short!");	
 	}
 }
 var emptyChecker = function(username, password){
-	if (username === "") {
-		document.getElementById("usernamelabel").style.color = "red";
-		document.getElementById("usernamelabel").innerHTML = "No username!";
+	if (username === "" && password === "") {
+		changeLabelColor("usernamelabel", "red");
+		changeLabelValue("usernamelabel", "Empty!")		
+		changeLabelColor("passwordlabel", "red");
+		changeLabelValue("passwordlabel", "Empty!")
+	}
+	else if (username === "") {
+		changeLabelColor("usernamelabel", "red");
+		changeLabelValue("usernamelabel", "Empty!")		
 	}
 	else if (password === "") {
-		document.getElementById("passwordlabel").style.color = "red";
-		document.getElementById("passwordlabel").innerHTML = "No password!";
+		changeLabelColor("passwordlabel", "red");
+		changeLabelValue("passwordlabel", "Empty!")
 	}
 }
 var isEmail = function(input){
