@@ -76,7 +76,7 @@ body {
 .labels {
 	font-family: arial;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	color: white;
+	color: #FFFFFF;
 }
 #footer {
 	background-color: #A9D5F3;
