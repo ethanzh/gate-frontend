@@ -26,5 +26,3 @@ $(document).ready(function(){
 	  $("#pas").css("background-color", "#66B2FF");
 	});
 });
-
-
