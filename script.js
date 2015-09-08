@@ -1,11 +1,26 @@
 "use strict"
+var main = function(){
+	var answers = loginGrabber();
+	stringFixer(answers[0], answers[1]);
+	emptyChecker(answers[0], answers[1]);
+}
 var loginGrabber = function(){
 	var username = document.getElementById("username").value
 	var password = document.getElementById("password").value
+	return [username, password];
+}
+var stringFixer = function(username, password){
 	username = username.toLowerCase();
 	username = username.trim();
-	console.log(username + " " + password);
-	console.log(isEmail(username));
+	username = username.replace(/ /g, '')
+}
+var emptyChecker = function(username, password){
+	if (username === "") {
+		document.getElementById("empty").innerHTML = "No username!";
+	}
+	else if (password === "") {
+		alert("EMPTY PASSWORD")
+	}
 }
 var isEmail = function(input){
 	if (input.indexOf("@") > 0){
