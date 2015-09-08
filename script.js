@@ -11,13 +11,12 @@ var loginGrabber = function(){
 		 */
 	}
 }
-console.log(userpass[0])
 $(document).ready(function(){
-	$( "#user" ).mouseover(function() {
-	  $("#user").css("background-color", "#A9D5F3");
+	$( "#usr" ).mouseover(function() {
+	  $("#usr").css("background-color", "#A9D5F3");
 	});
-	$( "#user" ).mouseleave(function() {
-	  $("#user").css("background-color", "#66B2FF");
+	$( "#usr" ).mouseleave(function() {
+	  $("#usr").css("background-color", "#66B2FF");
 	});
 	$( "#pas" ).mouseover(function() {
 	  $("#pas").css("background-color", "#A9D5F3");
@@ -26,4 +25,5 @@ $(document).ready(function(){
 	  $("#pas").css("background-color", "#66B2FF");
 	});
 });
+
 
