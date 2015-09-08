@@ -16,6 +16,7 @@ var stringFixer = function(username, password){
 }
 var emptyChecker = function(username, password){
 	if (username === "") {
+		document.getElementById("empty").style.color = "red";
 		document.getElementById("empty").innerHTML = "No username!";
 	}
 	else if (password === "") {
