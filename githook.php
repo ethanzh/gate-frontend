@@ -1,7 +1,6 @@
 <?php
 
 /**
- *
  * File created for GATE Education.
  *
  * @author William Shiao <willshiao@gmail.com>
