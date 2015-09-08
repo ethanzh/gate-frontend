@@ -1,10 +1,26 @@
 "use strict"
 var main = function(){
+	makeLabelsNormal();
 	var answers = loginGrabber();
 	stringFixer(answers[0], answers[1]);
 	emptyChecker(answers[0], answers[1]);
 	lengthChecker(answers[1]);
-	console.log(answers)
+}
+var makeLabelsNormal = function(){
+	changeLabelValue("usernamelabel", "Username: ");
+	changeLabelValue("passwordlabel", "Password: ");
+	changeLabelColor("usernamelabel", "black");
+	changeLabelColor("passwordlabel", "black");
+}
+var changeLabelColor = function(id, color){
+	if (typeof id === 'string' && typeof color === 'string') {
+		document.getElementById(id).style.color = color;
+	}	
+}
+var changeLabelValue = function(id, label){
+	if (typeof id === 'string' && typeof label === 'string') {
+		document.getElementById(id).innerHTML = label;
+	}
 }
 var loginGrabber = function(){
 	var username = document.getElementById("username").value
@@ -18,10 +34,10 @@ var stringFixer = function(username, password){
 }
 var lengthChecker = function(password){
 	if (password.length > 18){
-		alert("Too long!");
+		changeLabelValue("passwordlabel", "Too long!");
 	}
 	else if (password.length < 6) {
-		alert("Too short!");
+		changeLabelValue("passwordlabel", "Too short!");
 	}
 }
 var emptyChecker = function(username, password){
