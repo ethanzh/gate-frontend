@@ -16,11 +16,12 @@ var stringFixer = function(username, password){
 }
 var emptyChecker = function(username, password){
 	if (username === "") {
-		document.getElementById("empty").style.color = "red";
-		document.getElementById("empty").innerHTML = "No username!";
+		document.getElementById("usernamelabel").style.color = "red";
+		document.getElementById("usernamelabel").innerHTML = "No username!";
 	}
 	else if (password === "") {
-		alert("EMPTY PASSWORD")
+		document.getElementById("passwordlabel").style.color = "red";
+		document.getElementById("passwordlabel").innerHTML = "No password!";
 	}
 }
 var isEmail = function(input){
