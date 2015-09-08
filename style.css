@@ -25,7 +25,6 @@ body {
 }
 #footer {
 	background-color: #A9D5F3;
-	float: bottom;
 	height: 50px;
 	position:absolute;
   	bottom:0;
@@ -65,7 +64,6 @@ body {
 }
 .btn {
   -webkit-border-radius: 20;
-  -moz-border-radius: 20;
   border-radius: 20px;
   font-family: Arial;
   color: #ffffff;
