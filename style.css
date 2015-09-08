@@ -6,6 +6,11 @@ body {
 	font-size: 42px;
 	text-align: center;
 }
+#empty {
+	color: black;
+	font-size: 18px;
+	font-family: monospace;
+}
 #loginwindow {
 	background-color: #A9D5F3;
 	text-align: center;
