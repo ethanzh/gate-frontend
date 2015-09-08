@@ -8,6 +8,7 @@ var loginGrabber = function(){
 		/*
 		 *LEARN JQUERY + AJAX
 		 *SEND DATA TO DATABASE
+		 *
 		 */
 	}
 }
