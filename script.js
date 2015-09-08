@@ -4,7 +4,12 @@ var loginGrabber = function(){
 	var password = document.getElementById("password").value
 	console.log(username + " " + password);
 	var userpass = [username, password];
-	return userpass;
+	var checker = function(userpass){
+		/*
+		 *LEARN JQUERY + AJAX
+		 *SEND DATA TO DATABASE
+		 */
+	}
 }
 console.log(userpass[0])
 $(document).ready(function(){
