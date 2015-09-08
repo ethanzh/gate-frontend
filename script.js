@@ -2,15 +2,9 @@
 var loginGrabber = function(){
 	var username = document.getElementById("username").value
 	var password = document.getElementById("password").value
+	username = username.trim().toLowerCase();
+	password = password.trim().toLowerCase();
 	console.log(username + " " + password);
-	var userpass = [username, password];
-	var checker = function(userpass){
-		/*
-		 *LEARN JQUERY + AJAX
-		 *SEND DATA TO DATABASE
-		 *
-		 */
-	}
 }
 $(document).ready(function(){
 	$( "#usr" ).mouseover(function() {
