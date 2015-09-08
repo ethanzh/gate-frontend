@@ -5,6 +5,7 @@ var main = function(){
 	stringFixer(answers[0], answers[1]);
 	emptyChecker(answers[0], answers[1]);
 	lengthChecker(answers[1]);
+	isEmail(answers[0]);
 }
 var makeLabelsNormal = function(){
 	changeLabelValue("usernamelabel", "Username: ");
@@ -81,16 +82,16 @@ $(document).ready(function(){
 	});
 });
 
-var elem=document.getElementById("mainheading");
-var newAns="";
-for(var a=0,l=elem.innerHTML.length;a<l;a++){
-	newAns+='<span onmouseover="change1(this)" onmouseout="change2(this)" >'+
+var elem = document.getElementById("mainheading");
+var newAns = "";
+for(var a = 0,l = elem.innerHTML.length; a < l;a++){
+	newAns += '<span onmouseover="change1(this)" onmouseout="change2(this)" >' +
 	elem.innerHTML.charAt(a)+'</span>';
 }
-elem.innerHTML=newAns;
+elem.innerHTML = newAns;
 function change1(x){
-	x.style.color="#66B2FF";
+	x.style.color = "#66B2FF";
 }
 function change2(x){
-	x.style.color="white";
+	x.style.color = "white";
 }
