@@ -103,8 +103,7 @@ for(var a = 0,l = elem.innerHTML.length; a < l;a++){
 }
 elem.innerHTML = newAns;
 function change1(x){
-	x.style.color="#66B2FF";
-	x.style.color = "#66B2FF";
+	x.style.color="#A9D5F3";
 }
 function change2(x){
 	x.style.color="white";
