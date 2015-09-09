@@ -6,12 +6,18 @@ var main = function(){
 	var password = answers[1];
 	isEmail(username);
 	username = stringFixer(username);
-	checkAll(username, password);
+	if(checkAll(username, password)){
+		console.log(["Username: ", username],["Password: ", password]);
+		/*
+		 *
+		 *Do jQUERY/AJAX STUFF
+		 *
+		 */
+	}
 }
 var checkAll = function(username, password){
 	if (emptyChecker(username, password) &&
 		lengthChecker(password)){
-		console.log(["Username: ", username],["Password: ", password]);
 		return true;
 	}
 }
