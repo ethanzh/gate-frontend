@@ -6,6 +6,7 @@ var main = function(){
 	emptyChecker(answers[0], answers[1]);
 	lengthChecker(answers[1]);
 	isEmail(answers[0]);
+	console.log(answers);
 }
 var makeLabelsNormal = function(){
 	changeLabelValue("usernamelabel", "Username: ");
@@ -35,28 +36,20 @@ var stringFixer = function(username, password){
 }
 var lengthChecker = function(password){
 	if (password.length > 18){
-		changeLabelColor("passwordlabel", "red");
 		changeLabelValue("passwordlabel", "Too long!");
 	}
-	else if (password.length > 1 && password.length < 8) {
-		changeLabelColor("passwordlabel", "red");
-		changeLabelValue("passwordlabel", "Too short!");	
+	else if (password.length < 6) {
+		changeLabelValue("passwordlabel", "Too short!");
 	}
 }
 var emptyChecker = function(username, password){
-	if (username === "" && password === "") {
-		changeLabelColor("usernamelabel", "red");
-		changeLabelValue("usernamelabel", "Empty!")		
-		changeLabelColor("passwordlabel", "red");
-		changeLabelValue("passwordlabel", "Empty!")
-	}
-	else if (username === "") {
-		changeLabelColor("usernamelabel", "red");
-		changeLabelValue("usernamelabel", "Empty!")		
+	if (username === "") {
+		document.getElementById("usernamelabel").style.color = "red";
+		document.getElementById("usernamelabel").innerHTML = "No username!";
 	}
 	else if (password === "") {
-		changeLabelColor("passwordlabel", "red");
-		changeLabelValue("passwordlabel", "Empty!")
+		document.getElementById("passwordlabel").style.color = "red";
+		document.getElementById("passwordlabel").innerHTML = "No password!";
 	}
 }
 var isEmail = function(input){
@@ -81,17 +74,3 @@ $(document).ready(function(){
 	  $("#pas").css("background-color", "#66B2FF");
 	});
 });
-
-var elem = document.getElementById("mainheading");
-var newAns = "";
-for(var a = 0,l = elem.innerHTML.length; a < l;a++){
-	newAns += '<span onmouseover="change1(this)" onmouseout="change2(this)" >' +
-	elem.innerHTML.charAt(a)+'</span>';
-}
-elem.innerHTML = newAns;
-function change1(x){
-	x.style.color = "#66B2FF";
-}
-function change2(x){
-	x.style.color = "white";
-}
