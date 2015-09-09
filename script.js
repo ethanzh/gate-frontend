@@ -66,18 +66,18 @@ var lengthChecker = function(password){
 }
 var emptyChecker = function(username, password){
 	if (username === "" && password === "") {
-		document.getElementById("usernamelabel").style.color = "red";
-		document.getElementById("usernamelabel").innerHTML = "No username!";
-		document.getElementById("passwordlabel").style.color = "red";
-		document.getElementById("passwordlabel").innerHTML = "No password!";
+		changeLabelColor("usernamelabel", "red");
+		changeLabelValue("usernamelabel", "No username!");
+		changeLabelColor("passwordlabel", "red");
+		changeLabelValue("passwordlabel", "No password!");
 	}
 	else if (username === "") {
-		document.getElementById("usernamelabel").style.color = "red";
-		document.getElementById("usernamelabel").innerHTML = "No username!";
+		changeLabelColor("usernamelabel", "red");
+		changeLabelValue("usernamelabel", "No username!");
 	}
 	else if (password === "") {
-		document.getElementById("passwordlabel").style.color = "red";
-		document.getElementById("passwordlabel").innerHTML = "No password!";
+		changeLabelColor("passwordlabel", "red");
+		changeLabelValue("passwordlabel", "No password!");
 	}
 	else{
 		return true
@@ -121,6 +121,3 @@ var headerColor = function(){
 		x.style.color = "white";
 	}
 }
-$(function () {
-console.log("helllo world");
-});
