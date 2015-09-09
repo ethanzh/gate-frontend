@@ -50,7 +50,7 @@ var stringFixer = function(username){
 	return username;
 }
 var lengthChecker = function(password){
-	if (password.length > 18){
+	if (password.length > 32){
 		changeLabelValue("passwordlabel", "Too long!");
 		changeLabelColor("passwordlabel", "red");
 		return false
@@ -121,3 +121,6 @@ var headerColor = function(){
 		x.style.color = "white";
 	}
 }
+$(function () {
+console.log("helllo world");
+});
