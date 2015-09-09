@@ -7,7 +7,8 @@ var main = function(){
 	isEmail(username);
 	username = stringFixer(username);
 	if(checkAll(username, password)){
-		console.log(["Username: ", username],["Password: ", password]);
+		console.log(["Username: ", username]);
+		console.log(["Password: ", password]);
 		/*
 		 *
 		 *Do jQUERY/AJAX STUFF
