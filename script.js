@@ -30,17 +30,23 @@ var makeLabelsNormal = function(){
 }
 var changeLabelColor = function(id, color){
 	if (typeof id === 'string' && typeof color === 'string') {
-		document.getElementById(id).style.color = color;
+		$(idAdder(id)).css("color", color);
 	}	
 }
 var changeLabelValue = function(id, label){
 	if (typeof id === 'string' && typeof label === 'string') {
-		document.getElementById(id).innerHTML = label;
+		$(idAdder(id)).text(label);
 	}
 }
+var idAdder = function(id){
+	return ("#" + id);
+}
+var classAdder = function(className){
+	return ("." + className);
+}
 var loginGrabber = function(){
-	var username = document.getElementById("username").value
-	var password = document.getElementById("password").value
+	var username = $("#username").val();
+	var password = $("#password").val();
 	return [username, password];
 }
 var stringFixer = function(username){
