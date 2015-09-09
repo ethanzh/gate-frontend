@@ -2,17 +2,21 @@
 var main = function(){
 	makeLabelsNormal();
 	var answers = loginGrabber();
-	stringFixer(answers[0], answers[1]);
-	emptyChecker(answers[0], answers[1]);
-	lengthChecker(answers[1]);
-	isEmail(answers[0]);
-	console.log(answers);
+	var username = answers[0];
+	var password = answers[1];
+	isEmail(username);
+	username = stringFixer(username);
+	if (emptyChecker(username, password) &&
+		lengthChecker(password)){
+		console.log(["Username: ", username],["Password: ", password]);
+	}
+	
 }
 var makeLabelsNormal = function(){
 	changeLabelValue("usernamelabel", "Username: ");
 	changeLabelValue("passwordlabel", "Password: ");
-	changeLabelColor("usernamelabel", "black");
-	changeLabelColor("passwordlabel", "black");
+	changeLabelColor("usernamelabel", "white");
+	changeLabelColor("passwordlabel", "white");
 }
 var changeLabelColor = function(id, color){
 	if (typeof id === 'string' && typeof color === 'string') {
@@ -29,27 +33,44 @@ var loginGrabber = function(){
 	var password = document.getElementById("password").value
 	return [username, password];
 }
-var stringFixer = function(username, password){
+var stringFixer = function(username){
 	username = username.toLowerCase();
 	username = username.trim();
 	username = username.replace(/ /g, '')
+	return username;
 }
 var lengthChecker = function(password){
 	if (password.length > 18){
 		changeLabelValue("passwordlabel", "Too long!");
+		changeLabelColor("passwordlabel", "red");
+		return false
 	}
 	else if (password.length < 6) {
 		changeLabelValue("passwordlabel", "Too short!");
+		changeLabelColor("passwordlabel", "red");
+		return false
+	}
+	else{
+		return true
 	}
 }
 var emptyChecker = function(username, password){
-	if (username === "") {
+	if (username === "" && password === "") {
+		document.getElementById("usernamelabel").style.color = "red";
+		document.getElementById("usernamelabel").innerHTML = "No username!";
+		document.getElementById("passwordlabel").style.color = "red";
+		document.getElementById("passwordlabel").innerHTML = "No password!";
+	}
+	else if (username === "") {
 		document.getElementById("usernamelabel").style.color = "red";
 		document.getElementById("usernamelabel").innerHTML = "No username!";
 	}
 	else if (password === "") {
 		document.getElementById("passwordlabel").style.color = "red";
 		document.getElementById("passwordlabel").innerHTML = "No password!";
+	}
+	else{
+		return true
 	}
 }
 var isEmail = function(input){
