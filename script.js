@@ -10,7 +10,6 @@ var main = function(){
 		lengthChecker(password)){
 		console.log(["Username: ", username],["Password: ", password]);
 	}
-	
 }
 var makeLabelsNormal = function(){
 	changeLabelValue("usernamelabel", "Username: ");
