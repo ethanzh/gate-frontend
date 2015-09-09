@@ -6,9 +6,13 @@ var main = function(){
 	var password = answers[1];
 	isEmail(username);
 	username = stringFixer(username);
+	checkAll(username, password);
+}
+var checkAll = function(username, password){
 	if (emptyChecker(username, password) &&
 		lengthChecker(password)){
 		console.log(["Username: ", username],["Password: ", password]);
+		return true;
 	}
 }
 var makeLabelsNormal = function(){
@@ -94,17 +98,19 @@ $(document).ready(function(){
 	  $("#pas").css("background-color", "#66B2FF");
 	});
 });
-var elem = document.getElementById("mainheading");
-var newAns = "";
-for(var a = 0,l = elem.innerHTML.length; a < l;a++){
-	newAns += '<span onmouseover="change1(this)" onmouseout="change2(this)" >' +
-	elem.innerHTML.charAt(a)+'</span>';
-}
-elem.innerHTML = newAns;
-function change1(x){
-	x.style.color="#A9D5F3";
-}
-function change2(x){
-	x.style.color="white";
-	x.style.color = "white";
+var headerColor = function(){
+	var elem = document.getElementById("mainheading");
+	var newAns = "";
+	for(var a = 0,l = elem.innerHTML.length; a < l;a++){
+		newAns += '<span onmouseover="change1(this)" onmouseout="change2(this)" >' +
+		elem.innerHTML.charAt(a)+'</span>';
+	}
+	elem.innerHTML = newAns;
+	function change1(x){
+		x.style.color="#A9D5F3";
+	}
+	function change2(x){
+		x.style.color="white";
+		x.style.color = "white";
+	}
 }
