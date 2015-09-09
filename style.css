@@ -1,5 +1,5 @@
 body {
-	background: #66B2FF;
+	background: #FCFAD4; /* #66B2FF */
 }
 #buttontext {
 	text-shadow: 1px 1px 0 #000,
@@ -79,7 +79,6 @@ body {
 	color: #FFFFFF;
 }
 #footer {
-	background-color: #A9D5F3;
 	height: 50px;
 	position:absolute;
   	bottom:0;
@@ -98,7 +97,7 @@ body {
 	font-family: monospace;
 }
 #main {
-	background-color: #66B2FF;
+	
 }
 #password {
 	-webkit-text-security: disc;
