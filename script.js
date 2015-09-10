@@ -9,6 +9,7 @@ var main = function(){
 	if(checkAll(username, password)){
 		console.log(["Username: ", username]);
 		console.log(["Password: ", password]);
+		$('#forms')[0].reset();
 		/*
 		 *
 		 *Do jQUERY/AJAX STUFF
@@ -16,6 +17,9 @@ var main = function(){
 		 * Find out how to POST/GET to MySQL DB
 		 *
 		 */
+	}
+	else{
+		$('#forms')[0].reset();
 	}
 }
 var checkAll = function(username, password){
