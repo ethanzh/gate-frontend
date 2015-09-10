@@ -13,12 +13,15 @@ var main = function(){
 		 *
 		 *Do jQUERY/AJAX STUFF
 		 *
+		 * Find out how to POST/GET to MySQL DB
+		 *
 		 */
 	}
 }
 var checkAll = function(username, password){
 	if (emptyChecker(username, password) &&
-		lengthChecker(password)){
+		lengthChecker(password) &&
+		hasNumber(password)){
 		return true;
 	}
 }
@@ -40,9 +43,6 @@ var changeLabelValue = function(id, label){
 }
 var idAdder = function(id){
 	return ("#" + id);
-}
-var classAdder = function(className){
-	return ("." + className);
 }
 var loginGrabber = function(){
 	var username = $("#username").val();
@@ -90,12 +90,22 @@ var emptyChecker = function(username, password){
 	}
 }
 var isEmail = function(input){
-	if (input.indexOf("@") > 0){	
+	if (input.indexOf("@") > 0 && input.indexOf(".") > 0){
 		return true
 	}
 	else{
 		return false
 	}
+}
+var hasNumber = function(password){
+	var length = password.length;
+	for(var i = 0; i < length; i++){
+		if (!isNaN(password[i])) {
+			return true
+		}
+	}
+	changeLabelValue("passwordlabel", "Need at least 1 number!");
+	changeLabelColor("passwordlabel", "red");
 }
 $(document).ready(function(){
 	$( "#usr" ).mouseover(function() {
@@ -111,6 +121,14 @@ $(document).ready(function(){
 	  $("#pas").css("background-color", "#66B2FF");
 	});
 });
+$("#passwordtip").mouseover(function() {
+	$("#passwordtip").css("cursor", "pointer");
+});
+$("#passwordtip").click(function() {
+	alert("1. Must be 6 or more characters \r\n" +
+		  "2. Must be less than 36 characters \r\n" +
+		  "3. Must contain at least 1 number");
+})
 var headerColor = function(){
 	var elem = document.getElementById("mainheading");
 	var newAns = "";
