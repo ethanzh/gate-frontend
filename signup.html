@@ -19,32 +19,38 @@
 				<span id="empty"></span>
 				<div id="formdiv">
                     <div id="textprompt">
-                        <p class=".labels">Please fill in the following information:
+                        <p id="thing"
+                           class="text">Please fill in the following information:
                         </p>
-                        <br>
                         <form id="signupsheet">
-                            <p class="signlabels">Username:</p>
-                            <input id="usernamesignup" autocomplete="off" type="text" class="signup"
-                            type="text">
-                            <br>
-                            <br>
-                            <p class="signlabels">Password:</p>
-                            <input id="passwordsignup" autocomplete="off" type="text" class="signup"
-                            type="text">
-                            <br>
-                            <br>
-                            <p class="signlabels">Confirm Password:</p>
-                            <input id="passwordconfirm" autocomplete="off" type="text" class="signup"
-                            type="text">
-                            <br>
-                            <br>
-                            <p class="signlabels">Email:</p>
-                            <input id="email" autocomplete="off" type="text" class="signup"
-                            type="text">
+                            <div id="one">
+                                <p class="text">Username: </p>
+                                <input id="usernamesignup" autocomplete="off"
+                                type="text">
+                            </div>
+                            <div id="two">
+                                <p class="text">Password: </p>
+                                <input id="passwordsignup" autocomplete="off"
+                                type="text">
+                            </div>
+                            <div id="three">
+                                <p class="text">Confirm password: </p>
+                                <input id="passwordconfirm" autocomplete="off"
+                                type="text">
+                            </div>
+                            <div id="four">
+                                <p class="text">E-mail: </p>
+                                <input id="email" autocomplete="off"
+                                type="text">
+                            </div>
                             <br>
                             <br>
                             <button class="btn" onclick="mainSignUp(); return false">
                             <span id="buttontext">Submit</span></button>
+                            <p class="underlogin"><span id="signin">
+							Already have an account? Click here!
+                            </span></p>
+                            <br>
                         </form>
                     </div>
 					
