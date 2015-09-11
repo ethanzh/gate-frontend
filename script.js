@@ -151,6 +151,9 @@ $("#passwordtip").click(function() {
 		  "2. Must be less than 36 characters \r\n" +
 		  "3. Must contain at least 1 number");
 })
+$("#signup").click(function() {
+	location.href="signup.html";
+})
 var headerColor = function(){
 	var elem = document.getElementById("mainheading");
 	var newAns = "";
