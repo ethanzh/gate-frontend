@@ -31,12 +31,30 @@ var mainSignUp = function(){
 	var newpassword = inputs[1];
 	var passwordconf = inputs[2];
 	var email = inputs[3];
-	
-	if (newpassword === passwordconf) {
-		//
+	if (newpassword !== passwordconf) {
+		alert("Passowrds don't match")
+	}
+	if (signUpCheckAll(newusername, newpassword, passwordconf, email)) {
+		console.log(["Username: ", newusername]);
+		console.log(["Password: ", newpassword]);
+		console.log(["Password Confirmation: ", passwordconf]);
+		console.log(["Email: ", email]);
+		$('#signupsheet')[0].reset();
+	}
+	else{
+		console.log("NOPE")
+		$('#signupsheet')[0].reset();
 	}
 	
-	console.log([newusername, newpassword, passwordconf, email]);
+}
+var signUpCheckAll = function(username, password, passwordconf, email){
+	if (emptyChecker(username, password) &&
+		emptyChecker(passwordconf, email) &&
+		lengthChecker(password) &&
+		checkCap(password)
+		){
+		return true;
+	}
 }
 var signUpGrabber = function(){
 	var newusername = $("#usernamesignup").val();
