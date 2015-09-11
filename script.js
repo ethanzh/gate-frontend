@@ -35,6 +35,10 @@ var mainLogIn = function(){
 		$('#forms')[0].reset();
 	}
 }
+
+var sendNewUserToDatabase = function(username, password, email){
+	
+}
 var mainSignUp = function(){
 	var inputs = signUpGrabber();
 	/*var newusername = inputs[0];
@@ -51,6 +55,7 @@ var mainSignUp = function(){
 		console.log(["Password Confirmation: ", passwordconf]);
 		console.log(["Email: ", email]);
 		$('#signupsheet')[0].reset();
+		sendNewUserToDatabase(newusername, newpassword, email);
 	}
 	else{
 		console.log("NOPE")
