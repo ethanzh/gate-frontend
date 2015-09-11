@@ -36,7 +36,6 @@ var checkCap = function(password){
 	changeLabelValue("passwordlabel", "Need at least 1 capital letter!");
 	changeLabelColor("passwordlabel", "red");
 }
-
 var checkAll = function(username, password){
 	if (emptyChecker(username, password) &&
 		lengthChecker(password) &&
@@ -142,18 +141,6 @@ var mouseHover = function(firstdiv, seconddiv, firstcolor, secondcolor){
 	  $(seconddiv).css("background-color", secondcolor);
 	});
 })};
-mouseHover("#usr", "#pas", "#A9D5F3", "#66B2FF");
-$("#passwordtip").mouseover(function() {
-	$("#passwordtip").css("cursor", "pointer");
-});
-$("#passwordtip").click(function() {
-	alert("1. Must be 6 or more characters \r\n" +
-		  "2. Must be less than 36 characters \r\n" +
-		  "3. Must contain at least 1 number");
-})
-$("#signup").click(function() {
-	location.href="signup.html";
-})
 var headerColor = function(){
 	var elem = document.getElementById("mainheading");
 	var newAns = "";
@@ -170,3 +157,15 @@ var headerColor = function(){
 		x.style.color = "white";
 	}
 }
+mouseHover("#usr", "#pas", "#A9D5F3", "#66B2FF");
+$("#passwordtip").mouseover(function() {
+	$("#passwordtip").css("cursor", "pointer");
+});
+$("#passwordtip").click(function() {
+	alert("1. Must be 6 or more characters \r\n" +
+		  "2. Must be less than 36 characters \r\n" +
+		  "3. Must contain at least 1 number");
+})
+$("#signup").click(function() {
+	location.href="signup.html";
+})
