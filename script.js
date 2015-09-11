@@ -1,9 +1,13 @@
 "use strict"
+var testLogIn = ["ethanzh", "E38243874"]
+var testSignUp = ["ethanzh", "E38243874", "E38243874", "ethan.houston@gmail.com"];
 var mainLogIn = function(){
 	makeLabelsNormal();
 	var answers = loginGrabber();
-	var username = answers[0];
-	var password = answers[1];
+	/*var username = answers[0];
+	var password = answers[1];*/
+	var username = testLogIn[0];
+	var password = testLogIn[1];
 	isEmail(username);
 	username = stringFixer(username);
 	if(checkAll(username, password)){
@@ -27,10 +31,14 @@ var mainLogIn = function(){
 }
 var mainSignUp = function(){
 	var inputs = signUpGrabber();
-	var newusername = inputs[0];
+	/*var newusername = inputs[0];
 	var newpassword = inputs[1];
 	var passwordconf = inputs[2];
-	var email = inputs[3];
+	var email = inputs[3];*/
+	var newusername = testSignUp[0];
+	var newpassword = testSignUp[1];
+	var passwordconf = testSignUp[2];
+	var email = testSignUp[3];
 	if (newpassword !== passwordconf) {
 		alert("Passowrds don't match")
 	}
@@ -65,7 +73,6 @@ var signUpGrabber = function(){
 }
 var checkCap = function(password){
 	var length = password.length;
-	console.log("Step 1");
 	for(var i = 0; i < length; i++){
 		if ((password[i] >= 'A') && (password[i] <= 'Z')) {
 			return true;
@@ -206,4 +213,7 @@ $("#passwordtip").click(function() {
 })
 $("#signup").click(function() {
 	location.href="signup.html";
+})
+$("#signin").click(function() {
+	location.href="index.html";
 })
