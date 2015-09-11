@@ -1,5 +1,5 @@
 "use strict"
-var main = function(){
+var mainLogIn = function(){
 	makeLabelsNormal();
 	var answers = loginGrabber();
 	var username = answers[0];
@@ -24,6 +24,26 @@ var main = function(){
 	else{
 		$('#forms')[0].reset();
 	}
+}
+var mainSignUp = function(){
+	var inputs = signUpGrabber();
+	var newusername = inputs[0];
+	var newpassword = inputs[1];
+	var passwordconf = inputs[2];
+	var email = inputs[3];
+	
+	if (newpassword === passwordconf) {
+		//
+	}
+	
+	console.log([newusername, newpassword, passwordconf, email]);
+}
+var signUpGrabber = function(){
+	var newusername = $("#usernamesignup").val();
+	var newpassword = $("#passwordsignup").val();
+	var passwordconf = $("#passwordconfirm").val();
+	var email = $("#email").val();
+	return [newusername, newpassword, passwordconf, email];
 }
 var checkCap = function(password){
 	var length = password.length;
