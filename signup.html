@@ -14,7 +14,7 @@
 		<br>
 		<br>
 		<div id="main">
-			<div id="loginwindow">
+			<div id="signupwindow">
 				<h1 id="mainheading">Sign Up</h1>
 				<span id="empty"></span>
 				<div id="formdiv">
@@ -23,8 +23,24 @@
                         </p>
                         <br>
                         <form id="signupsheet">
-                            <input autocomplete="off" type="text" class="signup"
-							type="text">
+                            Username:<input id="usernamesignup" autocomplete="off" type="text" class="signup"
+                            type="text">
+                            <br>
+                            <br>
+                            Password:<input id="passwordsignup" autocomplete="off" type="text" class="signup"
+                            type="text">
+                            <br>
+                            <br>
+                            Password:<input id="passwordconfirm" autocomplete="off" type="text" class="signup"
+                            type="text">
+                            <br>
+                            <br>
+                            E-mail:<input id="email" autocomplete="off" type="text" class="signup"
+                            type="text">
+                            <br>
+                            <br>
+                            <button class="btn" onclick="mainSignUp(); return false">
+                            <span id="buttontext">Submit</span></button>
                         </form>
                     </div>
 					
