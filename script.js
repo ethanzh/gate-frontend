@@ -25,10 +25,23 @@ var main = function(){
 		$('#forms')[0].reset();
 	}
 }
+var checkCap = function(password){
+	var length = password.length;
+	console.log("Step 1");
+	for(var i = 0; i < length; i++){
+		if ((password[i] >= 'A') && (password[i] <= 'Z')) {
+			return true;
+		}
+	}
+	changeLabelValue("passwordlabel", "Need at least 1 capital letter!");
+	changeLabelColor("passwordlabel", "red");
+}
+
 var checkAll = function(username, password){
 	if (emptyChecker(username, password) &&
 		lengthChecker(password) &&
-		hasNumber(password)){
+		hasNumber(password) &&
+		checkCap(password)){
 		return true;
 	}
 }
