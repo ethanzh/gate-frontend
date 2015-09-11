@@ -93,22 +93,22 @@ var emptyChecker = function(username, password){
 		changeLabelValue("passwordlabel", "No password!");
 	}
 	else{
-		return true
+		return true;
 	}
 }
 var isEmail = function(input){
 	if (input.indexOf("@") > 0 && input.indexOf(".") > 0){
-		return true
+		return true;
 	}
 	else{
-		return false
+		return false;
 	}
 }
 var hasNumber = function(password){
 	var length = password.length;
 	for(var i = 0; i < length; i++){
 		if (!isNaN(password[i])) {
-			return true
+			return true;
 		}
 	}
 	changeLabelValue("passwordlabel", "Need at least 1 number!");
