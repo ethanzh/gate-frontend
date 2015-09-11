@@ -10,6 +10,9 @@ var main = function(){
 		console.log(["Username: ", username]);
 		console.log(["Password: ", password]);
 		$('#forms')[0].reset();
+		$("#mainheading").text("Success!");
+		$(".userspace").css("background-color", "#00FF00");
+		mouseHover("#usr", "#pas", "#00FF00", "#00FF00");
 		/*
 		 *
 		 *Do jQUERY/AJAX STUFF
@@ -111,20 +114,22 @@ var hasNumber = function(password){
 	changeLabelValue("passwordlabel", "Need at least 1 number!");
 	changeLabelColor("passwordlabel", "red");
 }
-$(document).ready(function(){
-	$( "#usr" ).mouseover(function() {
-	  $("#usr").css("background-color", "#A9D5F3");
+var mouseHover = function(firstdiv, seconddiv, firstcolor, secondcolor){
+	$(document).ready(function(){
+	$(firstdiv).mouseover(function() {
+	  $(firstdiv).css("background-color", firstcolor);
 	});
-	$( "#usr" ).mouseleave(function() {
-	  $("#usr").css("background-color", "#66B2FF");
+	$(firstdiv).mouseleave(function() {
+	  $(firstdiv).css("background-color", secondcolor);
 	});
-	$( "#pas" ).mouseover(function() {
-	  $("#pas").css("background-color", "#A9D5F3");
+	$(seconddiv).mouseover(function() {
+	  $(seconddiv).css("background-color", firstcolor);
 	});
-	$( "#pas" ).mouseleave(function() {
-	  $("#pas").css("background-color", "#66B2FF");
+	$(seconddiv).mouseleave(function() {
+	  $(seconddiv).css("background-color", secondcolor);
 	});
-});
+})};
+mouseHover("#usr", "#pas", "#A9D5F3", "#66B2FF");
 $("#passwordtip").mouseover(function() {
 	$("#passwordtip").css("cursor", "pointer");
 });
