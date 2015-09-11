@@ -73,7 +73,7 @@ body {
 	color: #FFFFFF;
 }
 .signlabels {
-	
+	font-family: arial;
 }
 #footer {
 	height: 50px;
@@ -111,7 +111,7 @@ body {
 	background-color: #A9D5F3;
 	text-align: center;
 	width: 500px;
-	height: 500px;
+	height: 530px;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 20px;
@@ -133,13 +133,23 @@ body {
 .signup {
 	
 }
-
+.text {
+	font-family: arial;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	color: #FFFFFF;
+}
+#thing {
+	text-shadow: ;
+}
 .btn:hover {
 	background: #A9D5F3;
 	text-decoration: none;
 	cursor: pointer;
 }
 #signup {
+	cursor: pointer;
+}
+#signin {
 	cursor: pointer;
 }
 #textprompt {
@@ -149,6 +159,6 @@ body {
 	border-radius: 20px;
 	padding: 5px;
 	width: 350px;
-	height: 300px;
+	height: 325px;
 	background-color: #66B2FF;
 }
