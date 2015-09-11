@@ -17,6 +17,12 @@ var mainLogIn = function(){
 		$("#mainheading").text("Success!");
 		$(".userspace").css("background-color", "#00FF00");
 		mouseHover("#usr", "#pas", "#00FF00", "#00FF00");
+		$("#usr").mouseover(function() {
+			$("#usr").css("background-color", "#D1FFC1");
+		});
+		$("#pas").mouseover(function() {
+			$("#pas").css("background-color", "#D1FFC1");
+		});
 		/*
 		 *
 		 *Do jQUERY/AJAX STUFF
@@ -39,9 +45,6 @@ var mainSignUp = function(){
 	var newpassword = testSignUp[1];
 	var passwordconf = testSignUp[2];
 	var email = testSignUp[3];
-	if (newpassword !== passwordconf) {
-		alert("Passowrds don't match")
-	}
 	if (signUpCheckAll(newusername, newpassword, passwordconf, email)) {
 		console.log(["Username: ", newusername]);
 		console.log(["Password: ", newpassword]);
@@ -55,11 +58,20 @@ var mainSignUp = function(){
 	}
 	
 }
+var passwordCheck = function(password, newpassword){
+	if (password !== newpassword) {
+		return false;
+	}
+	else{
+		return true;
+	}
+}
 var signUpCheckAll = function(username, password, passwordconf, email){
 	if (emptyChecker(username, password) &&
 		emptyChecker(passwordconf, email) &&
 		lengthChecker(password) &&
-		checkCap(password)
+		checkCap(password) &&
+		passwordCheck(password, passwordconf)
 		){
 		return true;
 	}
