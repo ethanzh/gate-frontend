@@ -1,7 +1,7 @@
 "use strict"
 var testLogIn = ["ethanzh", "E38243874"]
 var testSignUp = ["ethanzh", "E38243874", "E38243874", "ethan.houston@gmail.com"];
-var mainLogIn = function(){
+var main = function(){
 	makeLabelsNormal();
 	var answers = loginGrabber();
 	/*var username = answers[0];
