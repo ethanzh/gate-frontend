@@ -1,6 +1,13 @@
 body {
 	background: #FFFFFF;/*, #FCFAD4; #66B2FF */
 }
+a {
+	font-family: arial;
+	color: #404040;
+	font-size: 10px;
+	text-decoration: none;
+	
+}
 #buttontext {
 	text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
@@ -67,59 +74,6 @@ body {
 	padding: 20px;
 	border-style: solid;
 }
-.labels {
-	font-family: arial;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	color: #FFFFFF;
-}
-.signlabels {
-	font-family: arial;
-}
-#footer {
-	height: 50px;
-	position:absolute;
-  	bottom:0;
-   	width:100%;
-   	border-style: solid;
-}
-.underlogin {
-	font-family: arial;
-	color: #404040;
-	font-size: 10px;
-}
-#main {
-	
-}
-a {
-	font-family: arial;
-	color: #404040;
-	font-size: 10px;
-	text-decoration: none;
-	
-}
-#password {
-	-webkit-text-security: disc;
-	height: 20px;
-}
-#username {
-	height: 20px;
-}
-#passwordsignup {
-	-webkit-text-security: disc;
-}
-#passwordconfirm {
-	-webkit-text-security: disc;
-}
-.userspace {
-	border-style: solid;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 20px;
-	padding: 5px;
-	width: 350px;
-	height: 80px;
-	background-color: #66B2FF;
-}
 #signupwindow {
 	background-color: #A9D5F3;
 	text-align: center;
@@ -131,6 +85,47 @@ a {
 	padding: 20px;
 	border-style: solid;
 }
+#textprompt {
+	border-style: solid;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 20px;
+	padding: 5px;
+	width: 350px;
+	height: 335px;
+	background-color: #66B2FF;
+}
+#username {
+	height: 20px;
+}
+.userspace {
+	border-style: solid;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 20px;
+	padding: 5px;
+	width: 350px;
+	height: 80px;
+	background-color: #66B2FF;
+}
+.labels {
+	font-family: arial;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	color: #FFFFFF;
+}
+.signlabels {
+	font-family: arial;
+}
+.underlogin {
+	font-family: arial;
+	color: #404040;
+	font-size: 10px;
+}
+
+.password {
+	-webkit-text-security: disc;
+}
+
 .btn {
 	-webkit-border-radius: 20;
 	border-radius: 20px;
@@ -143,35 +138,13 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 }
-.signup {
-	
-}
-.text {
-	font-family: arial;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	color: #FFFFFF;
-}
-#thing {
-	text-shadow: ;
-}
 .btn:hover {
 	background: #A9D5F3;
 	text-decoration: none;
 	cursor: pointer;
 }
-#signup {
-	cursor: pointer;
-}
-#signin {
-	cursor: pointer;
-}
-#textprompt {
-	border-style: solid;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 20px;
-	padding: 5px;
-	width: 350px;
-	height: 335px;
-	background-color: #66B2FF;
+.text {
+	font-family: arial;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	color: #FFFFFF;
 }
