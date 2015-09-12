@@ -10,27 +10,27 @@ var main = function(){
 	var password = test[1];
 	var emailStatus = isEmail(username);
 	username = stringFixer(username);
-	console.log(["Username: ", username]);
-	console.log(["Password: ", password]);
-	$('#forms')[0].reset();
-	console.log("debug");
-	$("#mainheading").text("Success!");
-	$(".userspace").css("background-color", "#00FF00");
-	mouseHover("#usr", "#pas", "#00FF00", "#00FF00");
-	$("#usr").mouseover(function() {
-		$("#usr").css("background-color", "#D1FFC1");
-	});
-	$("#pas").mouseover(function() {
-		$("#pas").css("background-color", "#D1FFC1");
-	});
-	/*
-	 *
-	 *Do jQUERY/AJAX STUFF
-	 *
-	 * Find out how to POST/GET to MySQL DB
-	 *
-	 */
-		
+	if (true) {
+		console.log(["Username: ", username]);
+		console.log(["Password: ", password]);
+		$('#forms')[0].reset();
+		$("#mainheading").text("Success!");
+		$(".userspace").css("background-color", "#00FF00");
+		mouseHover("#usr", "#pas", "#00FF00", "#00FF00");
+		$("#usr").mouseover(function() {
+			$("#usr").css("background-color", "#D1FFC1");
+		});
+		$("#pas").mouseover(function() {
+			$("#pas").css("background-color", "#D1FFC1");
+		});
+		/*
+		 *
+		 *Do jQUERY/AJAX STUFF
+		 *
+		 * Find out how to POST/GET to MySQL DB
+		 *
+		 */
+	}		
 }
 var makeLabelsNormal = function(){
 	changeLabelValue("usernamelabel", "Username: ");
@@ -125,6 +125,4 @@ $("#passwordtip").click(function() {
 $("#signup").click(function() {
 	location.href="http://login.yaoshi.io/signup.html";
 })
-$("#signin").click(function() {
-	location.href="http://login.yaoshi.io/index.html";
-})
+
