@@ -229,8 +229,8 @@ $("#passwordtip").click(function() {
 		  "3. Must contain at least 1 number");
 })
 $("#signup").click(function() {
-	location.href="signup.html";
+	location.href="http://login.yaoshi.io/signup.html";
 })
 $("#signin").click(function() {
-	location.href="index.html";
+	location.href="http://login.yaoshi.io/index.html";
 })
