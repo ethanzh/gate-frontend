@@ -1,5 +1,5 @@
 "use strict"
-var test = ["ethanzh", "E38243874", "E38243874", "ethan.houston@gmail.com"];
+var test = ["ethanzh", "e38243874", "e38243874", "ethan.houston@gmail.com"];
 
 var main = function(){
 	var inputs = signUpGrabber();
@@ -41,6 +41,9 @@ var signUpCheckAll = function(username, password, passwordconf, email){
 	}
 	else if (!passwordsAreSame(password, passwordconf)) {
 		console.log("Passwords don't match!");
+	}
+	else if (!checkCap(password)){
+		console.log("Password doesn't have a capital letter!");
 	}
 	else {
 		return true;
