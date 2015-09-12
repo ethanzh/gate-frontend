@@ -7,17 +7,16 @@ var main = function(){
 	var newpassword = inputs[1];
 	var passwordconf = inputs[2];
 	var email = inputs[3];*/
-	var newusername = testSignUp[0];
-	var newpassword = testSignUp[1];
-	var passwordconf = testSignUp[2];
-	var email = testSignUp[3];
+	var newusername = test[0];
+	var newpassword = test[1];
+	var passwordconf = test[2];
+	var email = test[3];
 	if (signUpCheckAll(newusername, newpassword, passwordconf, email)) {
 		console.log(["Username: ", newusername]);
 		console.log(["Password: ", newpassword]);
 		console.log(["Password Confirmation: ", passwordconf]);
 		console.log(["Email: ", email]);
 		$('#signupsheet')[0].reset();
-		sendNewUserToDatabase(newusername, newpassword, email);
 	}
 	else{
 		console.log("NOPE")
@@ -40,6 +39,28 @@ var signUpCheckAll = function(username, password, passwordconf, email){
 		checkCap(password) &&
 		passwordCheck(password, passwordconf)
 		){
+		return true;
+	}
+}
+var emptyChecker = function(username, password){
+	if (username === "" && password === "") {
+		changeLabelColor("usernamelabel", "red");
+		changeLabelValue("usernamelabel", "No username!");
+		changeLabelColor("passwordlabel", "red");
+		changeLabelValue("passwordlabel", "No password!");
+		return false;
+	}
+	else if (username === "") {
+		changeLabelColor("usernamelabel", "red");
+		changeLabelValue("usernamelabel", "No username!");
+		return false;
+	}
+	else if (password === "") {
+		changeLabelColor("passwordlabel", "red");
+		changeLabelValue("passwordlabel", "No password!");
+		return false;
+	}
+	else{
 		return true;
 	}
 }
@@ -91,3 +112,7 @@ var hasNumber = function(password){
 	changeLabelValue("passwordlabel", "Need at least 1 number!");
 	changeLabelColor("passwordlabel", "red");
 }
+
+$("#signin").click(function() {
+	location.href="http://login.yaoshi.io/index.html";
+})
