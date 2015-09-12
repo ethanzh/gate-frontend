@@ -61,23 +61,21 @@ var stringFixer = function(username){
 }
 
 var emptyChecker = function(username, password){
-	if (username === "" && password === "") {
-		changeLabelColor("usernamelabel", "red");
-		changeLabelValue("usernamelabel", "No username!");
-		changeLabelColor("passwordlabel", "red");
-		changeLabelValue("passwordlabel", "No password!");
+	var idList = []
+	var argList = [username, password];
+	var varNames = ["usernamelabel","passwordlabel"];
+	
+	for(var j = 0; j < argList.length; j++){
+		if (argList[j] === "") {
+			console.log(varNames[j] + " is EMPTY!!!");
+			idList.push(varNames[j]);
+		}
 	}
-	else if (username === "") {
-		changeLabelColor("usernamelabel", "red");
-		changeLabelValue("usernamelabel", "No username!");
+	for(var i = 0; i < idList.length; i++){
+		changeLabelColor(idList[i], "red");
+		changeLabelValue(idList[i], "Empty!");
 	}
-	else if (password === "") {
-		changeLabelColor("passwordlabel", "red");
-		changeLabelValue("passwordlabel", "No password!");
-	}
-	else{
-		return true;
-	}
+	return true;
 }
 var isEmail = function(input){
 	if (input.indexOf("@") > 0 && input.indexOf(".") > 0){
