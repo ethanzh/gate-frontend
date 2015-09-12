@@ -7,6 +7,7 @@ var main = function(){
 	var newpassword = inputs[1];
 	var passwordconf = inputs[2];
 	var email = inputs[3];*/
+	
 	var newusername = test[0];
 	var newpassword = test[1];
 	var passwordconf = test[2];
@@ -19,12 +20,11 @@ var main = function(){
 		$('#signupsheet')[0].reset();
 	}
 	else{
-		console.log("NOPE")
 		$('#signupsheet')[0].reset();
 	}
 	
 }
-var passwordCheck = function(password, newpassword){
+var passwordsAreSame = function(password, newpassword){
 	if (password !== newpassword) {
 		return false;
 	}
@@ -33,36 +33,35 @@ var passwordCheck = function(password, newpassword){
 	}
 }
 var signUpCheckAll = function(username, password, passwordconf, email){
-	if (emptyChecker(username, password) &&
-		emptyChecker(passwordconf, email) &&
-		lengthChecker(password) &&
-		checkCap(password) &&
-		passwordCheck(password, passwordconf)
-		){
+	if (!emptyChecker(username, password, passwordconf, email)) {  
+    console.log("Some fields are empty!");
+	}
+	else if (!lengthChecker(password)) {
+		console.log("Password isn't long enough!");
+	}
+	else if (!passwordsAreSame(password, passwordconf)) {
+		console.log("Passwords don't match!");
+	}
+	else {
 		return true;
 	}
 }
-var emptyChecker = function(username, password){
-	if (username === "" && password === "") {
-		changeLabelColor("usernamelabel", "red");
-		changeLabelValue("usernamelabel", "No username!");
-		changeLabelColor("passwordlabel", "red");
-		changeLabelValue("passwordlabel", "No password!");
-		return false;
+var emptyChecker = function(username, password, passwordconf, email){
+	var idList = []
+	var argList = [username, password, passwordconf, email];
+	var varNames = ["usernamelabel","passwordlabel","passwordconflabel","emaillabel"];
+	
+	for(var j = 0; j < argList.length; j++){
+		if (argList[j] === "") {
+			console.log(varNames[j] + " is EMPTY!!!");
+			idList.push(varNames[j]);
+		}
 	}
-	else if (username === "") {
-		changeLabelColor("usernamelabel", "red");
-		changeLabelValue("usernamelabel", "No username!");
-		return false;
+	for(var i = 0; i < idList.length; i++){
+		changeLabelColor(idList[i], "red");
+		changeLabelValue(idList[i], "Empty!");
 	}
-	else if (password === "") {
-		changeLabelColor("passwordlabel", "red");
-		changeLabelValue("passwordlabel", "No password!");
-		return false;
-	}
-	else{
-		return true;
-	}
+	return true;
 }
 var signUpGrabber = function(){
 	var newusername = $("#usernamesignup").val();
@@ -112,7 +111,13 @@ var hasNumber = function(password){
 	changeLabelValue("passwordlabel", "Need at least 1 number!");
 	changeLabelColor("passwordlabel", "red");
 }
-
-$("#signin").click(function() {
-	location.href="http://login.yaoshi.io/index.html";
-})
+var changeLabelColor = function(id, color){
+	if (typeof id === 'string' && typeof color === 'string') {
+		$("#" + id).css("color", color);
+	}	
+}
+var changeLabelValue = function(id, label){
+	if (typeof id === 'string' && typeof label === 'string') {
+		$("#" + id).text(label);
+	}
+}
