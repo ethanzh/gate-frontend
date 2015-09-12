@@ -90,6 +90,12 @@ body {
 #main {
 	
 }
+a {
+	font-family: arial;
+	color: #404040;
+	font-size: 10px;
+	text-decoration: none;
+}
 #password {
 	-webkit-text-security: disc;
 	height: 20px;
@@ -117,7 +123,7 @@ body {
 	background-color: #A9D5F3;
 	text-align: center;
 	width: 500px;
-	height: 566px;
+	height: 575px;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 20px;
