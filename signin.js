@@ -4,16 +4,15 @@ var test = ["ethanzh", "E38243874"]
 var main = function(){
 	makeLabelsNormal();
 	var answers = loginGrabber();
-	/*var username = answers[0];
-	var password = answers[1];*/
+	//var username = answers[0];
+	//var password = answers[1];
 	var username = test[0];
 	var password = test[1];
-	var emailStatus = isEmail(username);
 	username = stringFixer(username);
 	if (true) {
 		console.log(["Username: ", username]);
 		console.log(["Password: ", password]);
-		$('#forms')[0].reset();
+		//$('#forms')[0].reset();
 		$("#mainheading").text("Success!");
 		$(".userspace").css("background-color", "#00FF00");
 		mouseHover("#usr", "#pas", "#00FF00", "#00FF00");
@@ -32,27 +31,32 @@ var main = function(){
 		 */
 	}		
 }
+
 var makeLabelsNormal = function(){
 	changeLabelValue("usernamelabel", "Username: ");
 	changeLabelValue("passwordlabel", "Password: ");
 	changeLabelColor("usernamelabel", "white");
 	changeLabelColor("passwordlabel", "white");
 }
+
 var changeLabelColor = function(id, color){
 	if (typeof id === 'string' && typeof color === 'string') {
 		$("#" + id).css("color", color);
 	}	
 }
+
 var changeLabelValue = function(id, label){
 	if (typeof id === 'string' && typeof label === 'string') {
 		$("#" + id).text(label);
 	}
 }
+
 var loginGrabber = function(){
 	var username = $("#username").val();
 	var password = $("#password").val();
 	return [username, password];
 }
+
 var stringFixer = function(username){
 	username = username.toLowerCase();
 	username = username.trim();
@@ -77,24 +81,7 @@ var emptyChecker = function(username, password){
 	}
 	return true;
 }
-var isEmail = function(input){
-	if (input.indexOf("@") > 0 && input.indexOf(".") > 0){
-		return true;
-	}
-	else{
-		return false;
-	}
-}
-var hasNumber = function(password){
-	var length = password.length;
-	for(var i = 0; i < length; i++){
-		if (!isNaN(password[i])) {
-			return true;
-		}
-	}
-	changeLabelValue("passwordlabel", "Need at least 1 number!");
-	changeLabelColor("passwordlabel", "red");
-}
+
 var mouseHover = function(firstdiv, seconddiv, firstcolor, secondcolor){
 	$(document).ready(function(){
 	$(firstdiv).mouseover(function() {
