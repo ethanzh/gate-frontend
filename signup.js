@@ -1,5 +1,5 @@
 "use strict"
-var test = ["ethanzh", "e38243874", "e38243874", "ethan.houston@gmail.com"];
+var test = ["ethanzh", "E38243874", "E38243874", "ethan.houston@gmail.com"];
 
 var main = function(){
 	var inputs = signUpGrabber();
@@ -24,31 +24,27 @@ var main = function(){
 	}
 	
 }
-var passwordsAreSame = function(password, newpassword){
-	if (password !== newpassword) {
-		return false;
-	}
-	else{
-		return true;
+
+var changeLabelColor = function(id, color){
+	if (typeof id === 'string' && typeof color === 'string') {
+		$("#" + id).css("color", color);
+	}	
+}
+
+var changeLabelValue = function(id, label){
+	if (typeof id === 'string' && typeof label === 'string') {
+		$("#" + id).text(label);
 	}
 }
-var signUpCheckAll = function(username, password, passwordconf, email){
-	if (!emptyChecker(username, password, passwordconf, email)) {  
-    console.log("Some fields are empty!");
-	}
-	else if (!lengthChecker(password)) {
-		console.log("Password isn't long enough!");
-	}
-	else if (!passwordsAreSame(password, passwordconf)) {
-		console.log("Passwords don't match!");
-	}
-	else if (!checkCap(password)){
-		console.log("Password doesn't have a capital letter!");
-	}
-	else {
-		return true;
-	}
+
+var signUpGrabber = function(){
+	var newusername = $("#usernamesignup").val();
+	var newpassword = $("#passwordsignup").val();
+	var passwordconf = $("#passwordconfirm").val();
+	var email = $("#email").val();
+	return [newusername, newpassword, passwordconf, email];
 }
+
 var emptyChecker = function(username, password, passwordconf, email){
 	var idList = []
 	var argList = [username, password, passwordconf, email];
@@ -66,13 +62,54 @@ var emptyChecker = function(username, password, passwordconf, email){
 	}
 	return true;
 }
-var signUpGrabber = function(){
-	var newusername = $("#usernamesignup").val();
-	var newpassword = $("#passwordsignup").val();
-	var passwordconf = $("#passwordconfirm").val();
-	var email = $("#email").val();
-	return [newusername, newpassword, passwordconf, email];
+
+var isEmail = function(input){
+	if (input.indexOf("@") > 0 && input.indexOf(".") > 0){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
+
+var hasNumber = function(password){
+	var length = password.length;
+	for(var i = 0; i < length; i++){
+		if (!isNaN(password[i])) {
+			return true;
+		}
+	}
+	changeLabelValue("passwordlabel", "Need at least 1 number!");
+	changeLabelColor("passwordlabel", "red");
+}
+
+var passwordsAreSame = function(password, newpassword){
+	if (password !== newpassword) {
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+
+var signUpCheckAll = function(username, password, passwordconf, email){
+	if (!emptyChecker(username, password, passwordconf, email)) {  
+    console.log("Some fields are empty!");
+	}
+	else if (!lengthChecker(password)) {
+		console.log("Password isn't long enough!");
+	}
+	else if (!passwordsAreSame(password, passwordconf)) {
+		console.log("Passwords don't match!");
+	}
+	else if (!checkCap(password)){
+		console.log("Password doesn't have a capital letter!");
+	}
+	else {
+		return true;
+	}
+}
+
 var checkCap = function(password){
 	var length = password.length;
 	for(var i = 0; i < length; i++){
@@ -83,12 +120,18 @@ var checkCap = function(password){
 	changeLabelValue("passwordlabel", "Need at least 1 capital letter!");
 	changeLabelColor("passwordlabel", "red");
 }
-var stringFixer = function(username){
+
+/*var stringFixer = function(username){
 	username = username.toLowerCase();
 	username = username.trim();
 	username = username.replace(/ /g, '')
 	return username;
 }
+
+EVENTUALLY THE PROGRAM SHOULD CHECK FOR BLANK SPACES AND ALERT USER
+
+*/
+
 var lengthChecker = function(password){
 	if (password.length > 32){
 		changeLabelValue("passwordlabel", "Too long!");
@@ -104,23 +147,5 @@ var lengthChecker = function(password){
 		return true
 	}
 }
-var hasNumber = function(password){
-	var length = password.length;
-	for(var i = 0; i < length; i++){
-		if (!isNaN(password[i])) {
-			return true;
-		}
-	}
-	changeLabelValue("passwordlabel", "Need at least 1 number!");
-	changeLabelColor("passwordlabel", "red");
-}
-var changeLabelColor = function(id, color){
-	if (typeof id === 'string' && typeof color === 'string') {
-		$("#" + id).css("color", color);
-	}	
-}
-var changeLabelValue = function(id, label){
-	if (typeof id === 'string' && typeof label === 'string') {
-		$("#" + id).text(label);
-	}
-}
+
+
