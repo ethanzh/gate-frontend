@@ -1,6 +1,7 @@
 body {
 	background: #FFFFFF;/*, #FCFAD4; #66B2FF */
 }
+
 a {
 	font-family: arial;
 	color: #404040;
@@ -8,6 +9,7 @@ a {
 	text-decoration: none;
 	
 }
+
 #buttontext {
 	text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
@@ -34,6 +36,7 @@ a {
     2px -1px 0 #000,
     -2px -1px 0 #000;	
 }
+
 #mainheading {
 	font-family: monospace;
 	font-size: 42px;
@@ -64,6 +67,7 @@ a {
     2px -1px 0 #000,
     -2px -1px 0 #000;
 }
+
 #loginwindow {
 	background-color: #A9D5F3;
 	text-align: center;
@@ -74,6 +78,7 @@ a {
 	padding: 20px;
 	border-style: solid;
 }
+
 #signupwindow {
 	background-color: #A9D5F3;
 	text-align: center;
@@ -85,6 +90,7 @@ a {
 	padding: 20px;
 	border-style: solid;
 }
+
 #textprompt {
 	border-style: solid;
 	margin-left: auto;
@@ -95,6 +101,7 @@ a {
 	height: 335px;
 	background-color: #66B2FF;
 }
+
 .userspace {
 	border-style: solid;
 	margin-left: auto;
@@ -105,14 +112,17 @@ a {
 	height: 80px;
 	background-color: #66B2FF;
 }
+
 .labels {
 	font-family: arial;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	color: #FFFFFF;
 }
+
 .signlabels {
 	font-family: arial;
 }
+
 .underlogin {
 	font-family: arial;
 	color: #404040;
@@ -135,11 +145,13 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 }
+
 .btn:hover {
 	background: #A9D5F3;
 	text-decoration: none;
 	cursor: pointer;
 }
+
 .text {
 	font-family: arial;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
