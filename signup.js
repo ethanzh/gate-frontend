@@ -12,6 +12,11 @@ var main = function(){
 	var newpassword = test[1];
 	var passwordconf = test[2];
 	var email = test[3];
+	
+	newusername = stringFixer(newusername);
+	
+	clearFields();
+	
 	if (signUpCheckAll(newusername, newpassword, passwordconf, email)) {
 		console.log(["Username: ", newusername]);
 		console.log(["Password: ", newpassword]);
@@ -121,16 +126,13 @@ var checkCap = function(password){
 	changeLabelColor("passwordlabel", "red");
 }
 
-/*var stringFixer = function(username){
+var stringFixer = function(username){
 	username = username.toLowerCase();
 	username = username.trim();
 	username = username.replace(/ /g, '')
 	return username;
 }
 
-EVENTUALLY THE PROGRAM SHOULD CHECK FOR BLANK SPACES AND ALERT USER
-
-*/
 
 var lengthChecker = function(password){
 	if (password.length > 32){
@@ -148,4 +150,10 @@ var lengthChecker = function(password){
 	}
 }
 
+var clearFields = function(){
+	$("#usernamesignup").val("");
+	$("#passwordsignup").val("");
+	$("#passwordconfirm").val("");
+	$("#email").val("");
+}
 
