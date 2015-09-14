@@ -101,6 +101,10 @@ a {
 	background-color: #66B2FF;
 }
 
+#passwordreq:hover {
+	cursor: pointer;
+}
+
 .userspace {
 	border-style: solid;
 	margin-left: auto;
