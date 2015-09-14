@@ -3,35 +3,35 @@ var test = ["ethanzh", "E38243874"]
 
 var main = function(){
 	makeLabelsNormal();
+	
 	var answers = loginGrabber();
+	
 	//var username = answers[0];
 	//var password = answers[1];
 	var username = test[0];
 	var password = test[1];
-	username = stringFixer(username);
-	if (true) {
-		console.log(["Username: ", username]);
-		console.log(["Password: ", password]);
-		//$('#forms')[0].reset();
-		$("#mainheading").text("Success!");
-		$(".userspace").css("background-color", "#00FF00");
-		mouseHover("#usr", "#pas", "#00FF00", "#00FF00");
-		$("#usr").mouseover(function() {
-			$("#usr").css("background-color", "#D1FFC1");
-		});
-		$("#pas").mouseover(function() {
-			$("#pas").css("background-color", "#D1FFC1");
-		});
-		/*
-		 *
-		 *Do jQUERY/AJAX STUFF
-		 *
-		 * Find out how to POST/GET to MySQL DB
-		 *
-		 */
-	}		
+	
+	clearFields();
+	
+	if (emptyChecker(username, password)) {
+		success(username, password);
+	}
+	else{
+		fail();
+	}
 }
 
+var success = function(username, password){
+	console.log(["Username: ", username]);
+	console.log(["Password: ", password]);
+	//$('#forms')[0].reset();
+	colorChanger("Success!", "#00FF00", "#D1FFC1");
+}
+
+var fail = function(){
+	//$('#forms')[0].reset();
+	colorChanger("Fail!", "red", "#FF8C8C");
+}
 var makeLabelsNormal = function(){
 	changeLabelValue("usernamelabel", "Username: ");
 	changeLabelValue("passwordlabel", "Password: ");
@@ -57,29 +57,39 @@ var loginGrabber = function(){
 	return [username, password];
 }
 
-var stringFixer = function(username){
-	username = username.toLowerCase();
-	username = username.trim();
-	username = username.replace(/ /g, '')
-	return username;
+var emptyChecker = function(username, password){
+	if (username === "" && password === "") {
+		changeLabelValue("usernamelabel", "Empty!");
+		changeLabelValue("passwordlabel", "Empty!");
+		changeLabelColor("usernamelabel", "red");
+		changeLabelColor("passwordlabel", "red");
+		return false;
+	}
+	else if (username === "") {
+		changeLabelValue("usernamelabel", "Empty!");
+		changeLabelColor("usernamelabel", "red");
+		return false;
+	}
+	else if (password === "") {
+		changeLabelValue("passwordlabel", "Empty!");
+		changeLabelColor("passwordlabel", "red");
+		return false;
+	}
+	else{
+		return true;
+	}
 }
 
-var emptyChecker = function(username, password){
-	var idList = []
-	var argList = [username, password];
-	var varNames = ["usernamelabel","passwordlabel"];
-	
-	for(var j = 0; j < argList.length; j++){
-		if (argList[j] === "") {
-			console.log(varNames[j] + " is EMPTY!!!");
-			idList.push(varNames[j]);
-		}
-	}
-	for(var i = 0; i < idList.length; i++){
-		changeLabelColor(idList[i], "red");
-		changeLabelValue(idList[i], "Empty!");
-	}
-	return true;
+var colorChanger = function(heading, backgroundColor, hoverColor){
+	$("#mainheading").text(heading);
+	$(".userspace").css("background-color", backgroundColor);
+	mouseHover("#usr", "#pas", backgroundColor, backgroundColor);
+	$("#usr").mouseover(function() {
+		$("#usr").css("background-color", hoverColor);
+	});
+	$("#pas").mouseover(function() {
+		$("#pas").css("background-color", hoverColor);
+	});
 }
 
 var mouseHover = function(firstdiv, seconddiv, firstcolor, secondcolor){
@@ -97,6 +107,11 @@ var mouseHover = function(firstdiv, seconddiv, firstcolor, secondcolor){
 	  $(seconddiv).css("background-color", secondcolor);
 	});
 })};
+
+var clearFields = function(){
+	$("#textuser").val("");
+	$("#textpass").val("");
+}
 
 mouseHover("#usr", "#pas", "#A9D5F3", "#66B2FF");
 $("#passwordtip").mouseover(function() {
