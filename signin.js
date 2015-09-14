@@ -117,12 +117,4 @@ mouseHover("#usr", "#pas", "#A9D5F3", "#66B2FF");
 $("#passwordtip").mouseover(function() {
 	$("#passwordtip").css("cursor", "pointer");
 });
-$("#passwordtip").click(function() {
-	alert("1. Must be 6 or more characters \r\n" +
-		  "2. Must be less than 36 characters \r\n" +
-		  "3. Must contain at least 1 number");
-})
-$("#signup").click(function() {
-	location.href="http://login.yaoshi.io/signup.html";
-})
 

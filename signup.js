@@ -157,3 +157,10 @@ var clearFields = function(){
 	$("#email").val("");
 }
 
+var passwordReq = function(){
+	alert("1. Must be 6 or more characters \r\n" +
+		  "2. Must be less than 36 characters \r\n" +
+		  "3. Must contain at least 1 number \r\n" +
+		  "4. Must contain at least 1 capital letter");
+}
+
