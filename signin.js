@@ -1,15 +1,15 @@
 "use strict"
-var test = ["ethanzh", "E38243874"]
 
 var main = function(){
 	makeLabelsNormal();
 	
-	var answers = loginGrabber();
+	//var answers = loginGrabber();
+	//var answers = testSuite.goodLogin;
 	
-	//var username = answers[0];
-	//var password = answers[1];
-	var username = test[0];
-	var password = test[1];
+	var answers = ["ethanzh", "E38243874"]
+	
+	var username = answers[0];
+	var password = answers[1];
 	
 	clearFields();
 	
@@ -20,6 +20,24 @@ var main = function(){
 		fail();
 	}
 }
+
+function testSuite() {
+	this.goodLogin = function(){
+        return ["ethanzh", "E38243874"];
+    }
+	this.noUsername = function(){
+		return ["", "E38243874"];
+	}
+	
+	this.noPassword = function(){
+		return ["ethanzh", ""];
+	}
+	
+	this.bothEmpty = function(){
+		return ["", ""];
+	}
+}
+
 
 var success = function(username, password){
 	console.log(["Username: ", username]);
