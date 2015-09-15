@@ -1,7 +1,7 @@
 "use strict"
 var test = ["ethanzh", "E38243874", "E38243874", "ethan.houston@gmail.com"];
 
-var main = function(){
+var main = function() {
 	var inputs = signUpGrabber();
 	/*var newusername = inputs[0];
 	var newpassword = inputs[1];
@@ -30,7 +30,7 @@ var main = function(){
 	
 }
 
-var sendToDatabse = function(newusername, newpassword, email){
+var sendToDatabse = function(newusername, newpassword, email) {
 	/*
 	 *
 	 *	LEARN AJAX LOL
@@ -39,19 +39,19 @@ var sendToDatabse = function(newusername, newpassword, email){
 	 */
 }
 
-var changeLabelColor = function(id, color){
+var changeLabelColor = function(id, color) {
 	if (typeof id === 'string' && typeof color === 'string') {
 		$("#" + id).css("color", color);
 	}	
 }
 
-var changeLabelValue = function(id, label){
+var changeLabelValue = function(id, label) {
 	if (typeof id === 'string' && typeof label === 'string') {
 		$("#" + id).text(label);
 	}
 }
 
-var signUpGrabber = function(){
+var signUpGrabber = function() {
 	var newusername = $("#usernamesignup").val();
 	var newpassword = $("#passwordsignup").val();
 	var passwordconf = $("#passwordconfirm").val();
@@ -59,25 +59,25 @@ var signUpGrabber = function(){
 	return [newusername, newpassword, passwordconf, email];
 }
 
-var emptyChecker = function(username, password, passwordconf, email){
+var emptyChecker = function(username, password, passwordconf, email) {
 	var idList = []
 	var argList = [username, password, passwordconf, email];
 	var varNames = ["usernamelabel","passwordlabel","passwordconflabel","emaillabel"];
 	
-	for(var j = 0; j < argList.length; j++){
+	for(var j = 0; j < argList.length; j++) {
 		if (argList[j] === "") {
 			console.log(varNames[j] + " is EMPTY!!!");
 			idList.push(varNames[j]);
 		}
 	}
-	for(var i = 0; i < idList.length; i++){
+	for(var i = 0; i < idList.length; i++) {
 		changeLabelColor(idList[i], "red");
 		changeLabelValue(idList[i], "Empty!");
 	}
 	return true;
 }
 
-var isEmail = function(input){
+var isEmail = function(input) {
 	if (input.indexOf("@") > 0 && input.indexOf(".") > 0){
 		return true;
 	}
@@ -86,7 +86,7 @@ var isEmail = function(input){
 	}
 }
 
-var hasNumber = function(password){
+var hasNumber = function(password) {
 	var length = password.length;
 	for(var i = 0; i < length; i++){
 		if (!isNaN(password[i])) {
@@ -97,7 +97,7 @@ var hasNumber = function(password){
 	changeLabelColor("passwordlabel", "red");
 }
 
-var passwordsAreSame = function(password, newpassword){
+var passwordsAreSame = function(password, newpassword) {
 	if (password !== newpassword) {
 		return false;
 	}
@@ -106,7 +106,7 @@ var passwordsAreSame = function(password, newpassword){
 	}
 }
 
-var signUpCheckAll = function(username, password, passwordconf, email){
+var signUpCheckAll = function(username, password, passwordconf, email) {
 	if (!emptyChecker(username, password, passwordconf, email)) {  
     console.log("Some fields are empty!");
 	}
@@ -116,7 +116,7 @@ var signUpCheckAll = function(username, password, passwordconf, email){
 	else if (!passwordsAreSame(password, passwordconf)) {
 		console.log("Passwords don't match!");
 	}
-	else if (!checkCap(password)){
+	else if (!checkCap(password)) {
 		console.log("Password doesn't have a capital letter!");
 	}
 	else {
@@ -124,7 +124,7 @@ var signUpCheckAll = function(username, password, passwordconf, email){
 	}
 }
 
-var checkCap = function(password){
+var checkCap = function(password) {
 	var length = password.length;
 	for(var i = 0; i < length; i++){
 		if ((password[i] >= 'A') && (password[i] <= 'Z')) {
@@ -135,7 +135,7 @@ var checkCap = function(password){
 	changeLabelColor("passwordlabel", "red");
 }
 
-var stringFixer = function(username){
+var stringFixer = function(username) {
 	username = username.toLowerCase();
 	username = username.trim();
 	username = username.replace(/ /g, '')
@@ -143,8 +143,8 @@ var stringFixer = function(username){
 }
 
 
-var lengthChecker = function(password){
-	if (password.length > 32){
+var lengthChecker = function(password) {
+	if (password.length > 32) {
 		changeLabelValue("passwordlabel", "Too long!");
 		changeLabelColor("passwordlabel", "red");
 		return false
@@ -159,14 +159,14 @@ var lengthChecker = function(password){
 	}
 }
 
-var clearFields = function(){
+var clearFields = function() {
 	$("#usernamesignup").val("");
 	$("#passwordsignup").val("");
 	$("#passwordconfirm").val("");
 	$("#email").val("");
 }
 
-var passwordReq = function(){
+var passwordReq = function() {
 	alert("1. Must be 6 or more characters \r\n" +
 		  "2. Must be less than 36 characters \r\n" +
 		  "3. Must contain at least 1 number \r\n" +
