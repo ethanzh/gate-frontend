@@ -6,4 +6,5 @@ Ethan:
 
 
 Ken:
-
+    -Create MySQL Database
+    -Be able to 'recieve' information from front-end
