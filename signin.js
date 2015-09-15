@@ -16,8 +16,7 @@ var main = function() {
 	if (emptyChecker(username, password)) {
 		success(username, password);
 		checkDatabase(username, password);
-	}
-	else{
+	} else{
 		fail();
 	}
 }
@@ -89,18 +88,15 @@ var emptyChecker = function(username, password) {
 		changeLabelColor("usernamelabel", "red");
 		changeLabelColor("passwordlabel", "red");
 		return false;
-	}
-	else if (username === "") {
+	} else if (username === "") {
 		changeLabelValue("usernamelabel", "Empty!");
 		changeLabelColor("usernamelabel", "red");
 		return false;
-	}
-	else if (password === "") {
+	} else if (password === "") {
 		changeLabelValue("passwordlabel", "Empty!");
 		changeLabelColor("passwordlabel", "red");
 		return false;
-	}
-	else{
+	} else{
 		return true;
 	}
 }

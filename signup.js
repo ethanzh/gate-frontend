@@ -23,8 +23,7 @@ var main = function() {
 		console.log(["Password Confirmation: ", passwordconf]);
 		console.log(["Email: ", email]);
 		sendToDatabse(newusername, newpassword, email);
-	}
-	else{
+	} else{
 
 	}
 	
@@ -100,8 +99,7 @@ var hasNumber = function(password) {
 var passwordsAreSame = function(password, newpassword) {
 	if (password !== newpassword) {
 		return false;
-	}
-	else{
+	} else{
 		return true;
 	}
 }
@@ -109,17 +107,13 @@ var passwordsAreSame = function(password, newpassword) {
 var signUpCheckAll = function(username, password, passwordconf, email) {
 	if (!emptyChecker(username, password, passwordconf, email)) {  
     console.log("Some fields are empty!");
-	}
-	else if (!lengthChecker(password)) {
+	} else if (!lengthChecker(password)) {
 		console.log("Password isn't long enough!");
-	}
-	else if (!passwordsAreSame(password, passwordconf)) {
+	} else if (!passwordsAreSame(password, passwordconf)) {
 		console.log("Passwords don't match!");
-	}
-	else if (!checkCap(password)) {
+	} else if (!checkCap(password)) {
 		console.log("Password doesn't have a capital letter!");
-	}
-	else {
+	} else {
 		return true;
 	}
 }
@@ -148,13 +142,11 @@ var lengthChecker = function(password) {
 		changeLabelValue("passwordlabel", "Too long!");
 		changeLabelColor("passwordlabel", "red");
 		return false
-	}
-	else if (password.length < 6) {
+	} else if (password.length < 6) {
 		changeLabelValue("passwordlabel", "Too short!");
 		changeLabelColor("passwordlabel", "red");
 		return false
-	}
-	else{
+	} else{
 		return true
 	}
 }
