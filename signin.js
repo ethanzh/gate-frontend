@@ -15,6 +15,7 @@ var main = function(){
 	
 	if (emptyChecker(username, password)) {
 		success(username, password);
+		checkDatabase(username, password);
 	}
 	else{
 		fail();
@@ -24,7 +25,7 @@ var main = function(){
 var checkDatabase = function(username, password){
 	/*
 	 *
-	 *DO AJAX SHIT HERE
+	 *DO AJAX STUFF HERE
 	 *
 	 */
 }
@@ -50,12 +51,10 @@ function testSuite() {
 var success = function(username, password){
 	console.log(["Username: ", username]);
 	console.log(["Password: ", password]);
-	//$('#forms')[0].reset();
 	colorChanger("Success!", "#00FF00", "#D1FFC1");
 }
 
 var fail = function(){
-	//$('#forms')[0].reset();
 	colorChanger("Fail!", "red", "#FF8C8C");
 }
 var makeLabelsNormal = function(){

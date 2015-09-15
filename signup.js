@@ -22,11 +22,10 @@ var main = function(){
 		console.log(["Password: ", newpassword]);
 		console.log(["Password Confirmation: ", passwordconf]);
 		console.log(["Email: ", email]);
-		$('#signupsheet')[0].reset();
 		sendToDatabse(newusername, newpassword, email);
 	}
 	else{
-		$('#signupsheet')[0].reset();
+
 	}
 	
 }
