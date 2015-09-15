@@ -8,12 +8,10 @@ var main = function() {
 	var passwordconf = inputs[2];
 	var email = inputs[3];*/
 	
-	var newusername = test[0];
+	var newusername = stringFixer(test[0]); //Runs stringFixer on username
 	var newpassword = test[1];
 	var passwordconf = test[2];
 	var email = test[3];
-	
-	newusername = stringFixer(newusername);
 	
 	clearFields();
 	

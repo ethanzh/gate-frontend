@@ -3,15 +3,18 @@
 var main = function() {
 	makeLabelsNormal();
 	
-	//var answers = loginGrabber();
-	//var answers = testSuite.goodLogin;
+	var test = ["ethanzh", "E38243874"];
 	
-	var answers = ["ethanzh", "E38243874"]
+	var answers = loginGrabber();
 	
-	var username = answers[0];
-	var password = answers[1];
+	//var username = answers[0];
+	//var password = answers[1];
 	
 	clearFields();
+	
+	var username = test[0];
+	var password = test[1];
+	
 	
 	if (emptyChecker(username, password)) {
 		success(username, password);
@@ -29,23 +32,17 @@ var checkDatabase = function(username, password) {
 	 */
 }
 
-function testSuite() {
-	this.goodLogin = function(){
-        return ["ethanzh", "E38243874"];
-    }
-	this.noUsername = function() {
+var testInputs = function(choice) {
+	if(choice === "1") {
+		return ["ethanzh", "E38243874"];
+	} else if(choice === "2") {
 		return ["", "E38243874"];
-	}
-	
-	this.noPassword = function() {
+	} else if(choice === "3") {
 		return ["ethanzh", ""];
-	}
-	
-	this.bothEmpty = function() {
+	} else if(choice === "4") {
 		return ["", ""];
 	}
 }
-
 
 var success = function(username, password) {
 	console.log(["Username: ", username]);
