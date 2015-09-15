@@ -23,11 +23,21 @@ var main = function(){
 		console.log(["Password Confirmation: ", passwordconf]);
 		console.log(["Email: ", email]);
 		$('#signupsheet')[0].reset();
+		sendToDatabse(newusername, newpassword, email);
 	}
 	else{
 		$('#signupsheet')[0].reset();
 	}
 	
+}
+
+var sendToDatabse = function(newusername, newpassword, email){
+	/*
+	 *
+	 *	LEARN AJAX LOL
+	 *
+	 *	
+	 */
 }
 
 var changeLabelColor = function(id, color){

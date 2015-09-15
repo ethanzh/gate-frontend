@@ -21,6 +21,14 @@ var main = function(){
 	}
 }
 
+var checkDatabase = function(username, password){
+	/*
+	 *
+	 *DO AJAX SHIT HERE
+	 *
+	 */
+}
+
 function testSuite() {
 	this.goodLogin = function(){
         return ["ethanzh", "E38243874"];
