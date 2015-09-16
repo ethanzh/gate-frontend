@@ -27,7 +27,9 @@ var main = function() {
 var checkDatabase = function(username, password) {
 	/*
 	 *
+	 *
 	 *DO AJAX STUFF HERE
+	 *
 	 *
 	 */
 }
