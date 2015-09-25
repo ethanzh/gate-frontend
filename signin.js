@@ -1,6 +1,9 @@
 "use strict"
 
 var main = function() {
+	
+	rememberMe();
+	
 	makeLabelsNormal();
 	
 	var test = ["ethanzh", "E38243874"];
@@ -112,6 +115,19 @@ var colorChanger = function(heading, backgroundColor, hoverColor) {
 	});
 }
 
+var rememberMe = function() {
+	var checkedValue = $('.box:checked').val();
+	if(typeof checkedValue === 'undefined'){
+		checkedValue = false;
+		return false;
+	}
+	else{
+		checkedValue = true;
+		return true;
+	}
+	console.log(checkedValue);
+}
+
 var mouseHover = function(firstdiv, seconddiv, firstcolor, secondcolor) {
 	$(document).ready(function() {
 	$(firstdiv).mouseover(function() {
@@ -134,6 +150,7 @@ var clearFields = function() {
 }
 
 mouseHover("#usr", "#pas", "#A9D5F3", "#66B2FF");
+mouseHover("#rememberme", "#rememberme", "#A9D5F3", "#66B2FF");
 $("#passwordtip").mouseover(function() {
 	$("#passwordtip").css("cursor", "pointer");
 });
