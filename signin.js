@@ -2,7 +2,7 @@
 
 var main = function() {
 	
-	rememberMe();
+	console.log(rememberMe());
 	
 	makeLabelsNormal();
 	
@@ -117,6 +117,7 @@ var colorChanger = function(heading, backgroundColor, hoverColor) {
 
 var rememberMe = function() {
 	var checkedValue = $('.box:checked').val();
+	
 	if(typeof checkedValue === 'undefined'){
 		checkedValue = false;
 		return false;
@@ -125,7 +126,6 @@ var rememberMe = function() {
 		checkedValue = true;
 		return true;
 	}
-	console.log(checkedValue);
 }
 
 var mouseHover = function(firstdiv, seconddiv, firstcolor, secondcolor) {
