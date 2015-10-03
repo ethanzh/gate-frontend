@@ -6,18 +6,17 @@ var main = function() {
 	
 	makeLabelsNormal();
 	
-	var test = testInputs(1);
+	var test = testInputs(4);
 	
 	var answers = loginGrabber();
-	console.log(answers);
-	//var username = answers[0];
-	//var password = answers[1];
+	
+	var username = answers[0];
+	var password = answers[1];
 	
 	clearFields();
 	
 	var username = test[0];
 	var password = test[1];
-	
 	
 	if (emptyChecker(username, password)) {
 		success(username, password);
@@ -151,6 +150,7 @@ var clearFields = function() {
 
 mouseHover("#usr", "#pas", "#A9D5F3", "#66B2FF");
 mouseHover("#rememberme", "#rememberme", "#A9D5F3", "#66B2FF");
+
 $("#passwordtip").mouseover(function() {
 	$("#passwordtip").css("cursor", "pointer");
 });
