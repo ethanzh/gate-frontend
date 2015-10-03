@@ -154,6 +154,7 @@ var clearFields = function() {
 	$("#passwordsignup").val("");
 	$("#passwordconfirm").val("");
 	$("#email").val("");
+	//WORK ON GETTING BUTTON TO RESET
 }
 
 var passwordReq = function() {
