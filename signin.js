@@ -6,10 +6,10 @@ var main = function() {
 	
 	makeLabelsNormal();
 	
-	var test = ["ethanzh", "E38243874"];
+	var test = testInputs(1);
 	
 	var answers = loginGrabber();
-	
+	console.log(answers);
 	//var username = answers[0];
 	//var password = answers[1];
 	
@@ -38,13 +38,13 @@ var checkDatabase = function(username, password) {
 }
 
 var testInputs = function(choice) {
-	if(choice === "1") {
+	if(choice === 1) {
 		return ["ethanzh", "E38243874"];
-	} else if(choice === "2") {
+	} else if(choice === 2) {
 		return ["", "E38243874"];
-	} else if(choice === "3") {
+	} else if(choice === 3) {
 		return ["ethanzh", ""];
-	} else if(choice === "4") {
+	} else if(choice === 4) {
 		return ["", ""];
 	}
 }
