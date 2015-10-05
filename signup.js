@@ -163,4 +163,3 @@ var passwordReq = function() {
 		  "3. Must contain at least 1 number \r\n" +
 		  "4. Must contain at least 1 capital letter");
 }
-
