@@ -1,12 +1,9 @@
 "use strict"
 
 var main = function() {
-	
-	console.log(rememberMe());
-	
+	var remember = rememberMe();
+
 	makeLabelsNormal();
-	
-	var test = testInputs(4);
 	
 	var answers = loginGrabber();
 	
@@ -14,10 +11,7 @@ var main = function() {
 	var password = answers[1];
 	
 	clearFields();
-	
-	var username = test[0];
-	var password = test[1];
-	
+
 	if (emptyChecker(username, password)) {
 		success(username, password);
 		checkDatabase(username, password);
@@ -77,8 +71,8 @@ var changeLabelValue = function(id, label) {
 }
 
 var loginGrabber = function() {
-	var username = $("#username").val();
-	var password = $("#password").val();
+	var username = $("#textuser").val();
+	var password = $("#textpass").val();
 	return [username, password];
 }
 
