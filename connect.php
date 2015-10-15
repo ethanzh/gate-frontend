@@ -1,3 +1,4 @@
 <?php
-mysql_connect('localhost', 'root', '');
+mysql_connect('localhost', 'ethanken', 'ethanken', 'maindb');
 mysql_select_db('maindb');
+?>
